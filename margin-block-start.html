@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <title>M A R G I N S</title>
+</head>
+<style>
+  body {
+    font-family: 'Inconsolata', monospace;
+  }
+  .container {
+    display: inline-grid;
+    grid-template-columns: 250px 1fr;
+    height: 530px;
+    width: 1000px;
+  }
+  .container__modes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  button {
+    display: block;
+    border: 2px solid #1836cd;
+    color: #1836cd;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px; 
+    outline: none;
+    padding: 10px 20px;
+    width: 150px;
+  }
+  button:active, button:focus {
+    background-color: #f8f4c7;
+  }
+  #container__result {
+    background-color: #eadef8;
+    writing-mode: horizontal-tb;
+  }
+  .box-size {
+    height: 170px;
+    width: 210px;
+  }
+  .container__result--box1 {
+    background-color: #d5bcf0;
+  } 
+  .container__result--box2 {
+    background-color: #ac79e2;
+    border-bottom: 5px dotted white;
+    border-top: 5px dotted white;
+    box-sizing: border-box;
+    color: #1836cd;
+    line-height: 3;
+    margin-block-start: 20px;
+    text-align: center;
+  } 
+  .container__result--box3 {
+    background-color: #d5bcf0;
+  }
+  span {
+    font-size: 20px;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="container__modes">
+      <button onclick="changeWritingMode('horizontal-tb')">HORIZONTAL TB</button>
+      <button onclick="changeWritingMode('vertical-lr')">VERTICAL LR</button>
+      <button onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
+    </div>
+    <div id="container__result">
+      <div class="container__result--box1 box-size"></div>
+      <div class="container__result--box2 box-size">
+        margin-block-start: 20px
+      </div>
+      <div class="container__result--box3 box-size"></div>
+    </div>
+  </div>
+</body>
+<script>
+  function changeWritingMode(value) {
+    document.getElementById("container__result").style.writingMode = value;
+  }
+</script>
+</html>
