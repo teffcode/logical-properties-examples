@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-  <title>M A R G I N S</title>
+  <title>P A D D I N G S</title>
 </head>
 <style>
   body {
@@ -13,8 +13,8 @@
   }
   .container {
     display: inline-grid;
-    grid-template-columns: 250px auto;
-    height: 530px;
+    grid-template-columns: 250px 1fr;
+    height: 510px;
     width: 1000px;
   }
   .container__modes {
@@ -50,14 +50,18 @@
   } 
   .container__result--box2 {
     background-color: #ac79e2;
-    border-bottom: 5px dotted white;
-    border-top: 5px dotted white;
     box-sizing: border-box;
     color: #1836cd;
-    margin-block-start: 20px;
+    padding-inline-end: 30px;
     line-height: 3;
     text-align: center;
   } 
+  .container__result--box21 {
+    border: 5px dotted white;
+    box-sizing: border-box;
+    height: 170px;
+    width: 180px;
+  }
   .container__result--box3 {
     background-color: #d5bcf0;
   }
@@ -75,7 +79,9 @@
     <div id="container__result">
       <div class="container__result--box1 box-size"></div>
       <div class="container__result--box2 box-size">
-        margin-block-start: 20px
+        <div class="container__result--box21">
+          padding-inline-end: 30px
+        </div>
       </div>
       <div class="container__result--box3 box-size"></div>
     </div>

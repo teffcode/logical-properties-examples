@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-  <title>M A R G I N S</title>
+  <title>B O R D E R S</title>
 </head>
 <style>
   body {
@@ -13,8 +13,8 @@
   }
   .container {
     display: inline-grid;
-    grid-template-columns: 250px auto;
-    height: 530px;
+    grid-template-columns: 250px 1fr;
+    height: 600px;
     width: 1000px;
   }
   .container__modes {
@@ -42,24 +42,30 @@
     writing-mode: horizontal-tb;
   }
   .box-size {
-    height: 170px;
-    width: 210px;
+    box-sizing: border-box;
+    font-size: 50px;
+    height: 200px;
+    line-height: 3;
+    text-align: center;
+    width: 200px;
   }
   .container__result--box1 {
     background-color: #d5bcf0;
+    border-inline-start-color: red;
+    border-inline-start-style: dotted;
+    border-inline-start-width: 10px;
   } 
   .container__result--box2 {
     background-color: #ac79e2;
-    border-bottom: 5px dotted white;
-    border-top: 5px dotted white;
-    box-sizing: border-box;
-    color: #1836cd;
-    margin-block-start: 20px;
-    line-height: 3;
-    text-align: center;
-  } 
+    border-inline-end-color: purple;
+    border-inline-end-style: double;
+    border-inline-end-width: 15px;
+  }
   .container__result--box3 {
     background-color: #d5bcf0;
+    border-block-end-color: yellow;
+    border-block-end-style: dotted;
+    border-block-end-width: 10px;
   }
   span {
     font-size: 20px;
@@ -73,11 +79,9 @@
       <button onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
     </div>
     <div id="container__result">
-      <div class="container__result--box1 box-size"></div>
-      <div class="container__result--box2 box-size">
-        margin-block-start: 20px
-      </div>
-      <div class="container__result--box3 box-size"></div>
+      <div class="container__result--box1 box-size">1️⃣</div>
+      <div class="container__result--box2 box-size">2️⃣</div>
+      <div class="container__result--box3 box-size">3️⃣</div>
     </div>
   </div>
 </body>
