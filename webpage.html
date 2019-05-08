@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /****** MODES ******/
+
+  .modes {
+    display: flex;
+    justify-content: center;
+  }
+  .modes__button {
+    border: 2px solid #1836cd;
+    color: #1836cd;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px; 
+    outline: none;
+    padding: 10px 20px;
+    width: 150px;
+  }
+  .modes__button:active, .modes__button:focus {
+    background-color: #f8f4c7;
+  }
+
+  /****** WEBPAGE ******/
+
+  #webpage {
+    writing-mode: horizontal-tb;
+  }
+  .webpage__navbar {
+    width: 100vw;
+    height: 10vh;
+    border: 2px solid red;
+  }
+  .webpage__navbar ul {
+    display: grid;
+    list-style: none;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="modes">
+      <button class="modes__button" onclick="changeWritingMode('horizontal-tb')">HORIZONTAL TB</button>
+      <button class="modes__button" onclick="changeWritingMode('vertical-lr')">VERTICAL LR</button>
+      <button class="modes__button" onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
+    </div>
+    <div id="webpage">
+      <nav class="webpage__navbar">
+        <ul>
+          <li>Hola</li>
+          <li>Chao</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</body>
+<script>
+  function changeWritingMode(value) {
+    document.getElementById("webpage").style.writingMode = value;
+  }
+</script>
+</html>

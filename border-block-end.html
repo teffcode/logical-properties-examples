@@ -42,30 +42,31 @@
     writing-mode: horizontal-tb;
   }
   .box-size {
+    block-size: 200px;
     box-sizing: border-box;
-    font-size: 50px;
-    height: 200px;
+    color: #1836cd;
+    font-size: 18px;
+    inline-size: 200px;
     line-height: 3;
     text-align: center;
-    width: 200px;
   }
   .container__result--box1 {
     background-color: #d5bcf0;
     border-inline-start-color: red;
     border-inline-start-style: dotted;
-    border-inline-start-width: 10px;
+    border-inline-start-width: 8px;
   } 
   .container__result--box2 {
     background-color: #ac79e2;
     border-inline-end-color: purple;
     border-inline-end-style: double;
-    border-inline-end-width: 15px;
+    border-inline-end-width: 10px;
   }
   .container__result--box3 {
     background-color: #d5bcf0;
     border-block-end-color: yellow;
     border-block-end-style: dotted;
-    border-block-end-width: 10px;
+    border-block-end-width: 8px;
   }
   span {
     font-size: 20px;
@@ -79,9 +80,9 @@
       <button onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
     </div>
     <div id="container__result">
-      <div class="container__result--box1 box-size">1️⃣</div>
-      <div class="container__result--box2 box-size">2️⃣</div>
-      <div class="container__result--box3 box-size">3️⃣</div>
+      <div class="container__result--box1 box-size">border-inline-start</div>
+      <div class="container__result--box2 box-size">border-inline-end</div>
+      <div class="container__result--box3 box-size">border-block-end</div>
     </div>
   </div>
 </body>

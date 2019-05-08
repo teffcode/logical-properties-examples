@@ -42,8 +42,8 @@
     writing-mode: horizontal-tb;
   }
   .box-size {
-    height: 170px;
-    width: 210px;
+    block-size: 170px;
+    inline-size: 210px;
   }
   .container__result--box1 {
     background-color: #d5bcf0;
@@ -59,14 +59,15 @@
   .container__result--box21 {
     border: 5px dotted white;
     box-sizing: border-box;
-    height: 170px;
-    width: 180px;
+    block-size: 170px;
+    inline-size: 180px;
+    font-size: 20px;
   }
   .container__result--box3 {
     background-color: #d5bcf0;
   }
   span {
-    font-size: 20px;
+    font-size: 18px;
   }
 </style>
 <body>
@@ -80,7 +81,7 @@
       <div class="container__result--box1 box-size"></div>
       <div class="container__result--box2 box-size">
         <div class="container__result--box21">
-          padding-inline-end: 30px
+          padding-inline-end
         </div>
       </div>
       <div class="container__result--box3 box-size"></div>
