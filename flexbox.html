@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <title>F L E X B O X</title>
+</head>
+<style>
+  body {
+    font-family: 'Inconsolata', monospace;
+  }
+  .container {
+    /* display: grid; */
+    /* grid-template-columns: 250px 1fr; */
+    height: 600px;
+    width: 500px;
+  }
+  .container__modes {
+    align-items: center;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  button {
+    display: block;
+    border: 2px solid #1836cd;
+    color: #1836cd;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px; 
+    outline: none;
+    padding: 10px 20px;
+    width: 150px;
+  }
+  button:active, button:focus {
+    background-color: #f8f4c7;
+  }
+  #container__result {
+    background-color: #eadef8;
+    writing-mode: horizontal-tb;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .box-size {
+    block-size: 100px;
+    box-sizing: border-box;
+    color: #1836cd;
+    font-size: 18px;
+    inline-size: 100px;
+    line-height: 3;
+    text-align: center;
+  }
+  .container__result--top {
+    background-color: #D5BCF0;
+  } 
+  .container__result--right {
+    background-color: #ac79e2;
+  }
+  .container__result--bottom {
+    background-color: #d5bcf0;
+  }
+  .container__result--left {
+    background-color: #d5bcf0;
+  }
+  span {
+    font-size: 20px;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="container__modes">
+      <button onclick="changeWritingMode('horizontal-tb')">HORIZONTAL TB</button>
+      <button onclick="changeWritingMode('vertical-lr')">VERTICAL LR</button>
+      <button onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
+    </div>
+    <div id="container__result">
+      <div class="container__result--top box-size">1</div>
+      <div class="container__result--right box-size">2</div>
+      <div class="container__result--bottom box-size">3</div>
+      <div class="container__result--left box-size">4</div>
+    </div>
+  </div>
+</body>
+<script>
+  function changeWritingMode(value) {
+    document.getElementById("container__result").style.writingMode = value;
+  }
+</script>
+</html>

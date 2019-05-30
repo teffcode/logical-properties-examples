@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <title>F L E X - C A R D</title>
+</head>
+<style>
+  body {
+    font-family: 'Inconsolata', monospace;
+  }
+  .container {
+    display: inline-grid;
+    grid-template-columns: 250px 1fr;
+    height: 600px;
+    width: 1000px;
+  }
+  .container__modes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  button {
+    display: block;
+    border: 2px solid #1836cd;
+    color: #1836cd;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px; 
+    outline: none;
+    padding: 10px 20px;
+    width: 150px;
+  }
+  button:active, button:focus {
+    background-color: #f8f4c7;
+  }
+  #container__result {
+    background-color: #eadef8;
+    writing-mode: horizontal-tb;
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+  .result__navbar {
+    width: 100%;
+    height: 40px;
+    background-color: palevioletred;
+  }
+  .result__card--button {
+    background: wheat;
+    width: 100px;
+    height: 40px;
+    align-self: flex-end;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 2.5;
+  }
+  span {
+    font-size: 20px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="container__modes">
+      <button onclick="changeWritingMode('horizontal-tb')">HORIZONTAL TB</button>
+      <button onclick="changeWritingMode('vertical-lr')">VERTICAL LR</button>
+      <button onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
+    </div>
+    <div id="container__result">
+      <nav class="result__navbar">
+        <ul>
+          <li>Hi</li>
+          <li>Hello</li>
+          <li>Good</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</body>
+<script>
+  function changeWritingMode(value) {
+    document.getElementById("container__result").style.writingMode = value;
+  }
+</script>
+</html>

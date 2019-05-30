@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <title>P O S I T I O N S</title>
+</head>
+<style>
+  body {
+    font-family: 'Inconsolata', monospace;
+  }
+  .container {
+    display: inline-grid;
+    grid-template-columns: 250px 1fr;
+    height: 600px;
+    width: 1000px;
+  }
+  .container__modes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  button {
+    display: block;
+    border: 2px solid #1836cd;
+    color: #1836cd;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px; 
+    outline: none;
+    padding: 10px 20px;
+    width: 150px;
+  }
+  button:active, button:focus {
+    background-color: #f8f4c7;
+  }
+  #container__result {
+    background-color: #eadef8;
+    writing-mode: horizontal-tb;
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+  .box-size {
+    block-size: 200px;
+    box-sizing: border-box;
+    color: #1836cd;
+    font-size: 18px;
+    inline-size: 200px;
+    line-height: 3;
+    text-align: center;
+  }
+  .container__result--top {
+    background-color: #D5BCF0;
+    position: absolute;
+    offset-block-start: 20px;
+  } 
+  .container__result--right {
+    background-color: #ac79e2;
+  }
+  .container__result--bottom {
+    background-color: #d5bcf0;
+  }
+  .container__result--left {
+    background-color: #d5bcf0;
+  }
+  span {
+    font-size: 20px;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="container__modes">
+      <button onclick="changeWritingMode('horizontal-tb')">HORIZONTAL TB</button>
+      <button onclick="changeWritingMode('vertical-lr')">VERTICAL LR</button>
+      <button onclick="changeWritingMode('vertical-rl')">VERTICAL RL</button>
+    </div>
+    <div id="container__result">
+      <div class="container__result--top">inset-block-start</div>
+      <!-- <div class="container__result--right box-size">right</div> -->
+      <!-- <div class="container__result--bottom box-size">bottom</div> -->
+      <!-- <div class="container__result--left box-size">left</div> -->
+    </div>
+  </div>
+</body>
+<script>
+  function changeWritingMode(value) {
+    document.getElementById("container__result").style.writingMode = value;
+  }
+</script>
+</html>
